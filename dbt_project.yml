@@ -1,0 +1,16 @@
+name: 'dbt_cde_airlines'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_cde_airlines'
+
+model-paths: ["dbt/models"]
+analysis-paths: ["dbt/analyses"]
+test-paths: ["dbt/tests"]
+seed-paths: ["dbt/seeds"]
+macro-paths: ["dbt/macros"]
+
+packages-install-path: ".dbt/packages"
+clean-targets:
+    - .dbt/target
+    - .dbt/package
