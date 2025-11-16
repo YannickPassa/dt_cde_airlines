@@ -1,0 +1,4 @@
+[project]
+name = "dt_cde_airlines"
+dynamic = ["version"]
+requires-python = "==3.13.*"

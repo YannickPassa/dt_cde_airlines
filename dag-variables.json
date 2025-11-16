@@ -1,0 +1,7 @@
+{
+    "PGDATABASE": "pilotage",
+    "PGHOST": "postgres",
+    "PGPASSWORD": "password",
+    "PGPORT": 5432,
+    "PGUSER": "postgres"
+}

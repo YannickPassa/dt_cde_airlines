@@ -1,0 +1,46 @@
+services:
+  postgres:
+    container_name: pilotage_postgres
+    image: postgres:17
+    # Disable some safety switches for a faster postgres: https://www.postgresql.org/docs/current/non-durability.html
+    command: -c fsync=off -c full_page_writes=off -c synchronous_commit=off
+    environment:
+      # Required by the "_/postgres" image
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=airflow  
+      # Avoid a log error when starting the container:
+      # > Role "root" does not exist.
+      # Without this variable, the default Unix account ('root')
+      # is used automatically when starting postgres.
+      # https://www.postgresql.org/docs/current/libpq-envars.html
+      - PGUSER=postgres
+      - PGPASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./docker/postgres/initdb.d:/docker-entrypoint-initdb.d
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT_ON_DOCKER_HOST:-5432}:5432"
+  
+  airflow:
+    container_name: pilotage_airflow
+    env_file: .env
+    environment:
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql://postgres:password@postgres:5432/airflow
+      - AIRFLOW__LOGGING__REMOTE_LOGGING=False
+      - AIRFLOW__WEBSERVER__AUTH_MANAGER=airflow.providers.fab.auth_manager.FabAuthManager
+    depends_on:
+      - postgres
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${AIRFLOW_PORT_ON_DOCKER_HOST:-8080}:8080"
+    volumes:
+      - ./custom-dev-entrypoint.sh:/entrypoint.sh
+      - ./dags:/opt/airflow/dags
+      - ./dbt:/opt/airflow/dbt
+      - ./logs:/opt/airflow/logs  # Add logs volume for local storage
+
+volumes:
+  postgres_data:
