@@ -23,7 +23,7 @@ services:
       - "127.0.0.1:${POSTGRES_PORT_ON_DOCKER_HOST:-5432}:5432"
   
   airflow:
-    container_name: pilotage_airflow
+    container_name: dt_cde_airlines_airflow
     env_file: .env
     environment:
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql://postgres:password@postgres:5432/airflow
