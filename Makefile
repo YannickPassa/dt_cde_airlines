@@ -14,11 +14,12 @@ export PATH := $(VIRTUAL_ENV)/bin:$(PATH)
 # =============================================================================
 .PHONY: venv compile-deps
 
+PYTHON ?= python3.13
+
 $(VIRTUAL_ENV): $(REQUIREMENTS_PATH)
-	uv venv
+	uv venv --python $(PYTHON)
 	uv pip sync --require-hashes $^
 	touch $@
-
 venv: $(VIRTUAL_ENV)
 
 PIP_COMPILE_FLAGS := --generate-hashes $(PIP_COMPILE_OPTIONS)

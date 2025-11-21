@@ -41,11 +41,6 @@ données...) est différente.
     # modifiez le ficher `.env` si besoin
     # Une fois les variables d'environnement chargées vérifiez que vous disposez bien de `psql`
 
-Pour définir ```PGPASSWORD=password``` vous pouvez utiliser la commande suivante
-
-    sudo -u postgres psql
-    > ALTER USER postgres PASSWORD 'password';
-
 Notez que le fichier commité `.env-base` contient les bonnes variables d'environnement
 quel que soit votre environnement de développement et n'est pas censé être "personnalisé".
 
