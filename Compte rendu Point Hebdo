@@ -1,0 +1,26 @@
+CR Point 24/11/2025
+Participants : anthony Khaira
+1h
+
+Points discutés :
+Type de données d'entrées.
+- Données Météos
+- Données compagnies aériennes. Lufthansa, Easy Jet, etc.
+- Conflit, actualités.
+
+Base :
+- Base PostgreSQL / PostGIS (géo localisation)
+- Faire UML architecture
+- ML => Régression linéaire, random forest, Réseau Neurone ?
+- IA avec n8n ?
+
+
+
+
+
+
+
+
+
+
+
