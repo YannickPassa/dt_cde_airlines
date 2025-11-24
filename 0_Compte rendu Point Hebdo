@@ -4,17 +4,25 @@ Participants : anthony Khaira
 
 Points discutés :
 Type de données d'entrées.
-- Données Météos
-- Données compagnies aériennes. Lufthansa, Easy Jet, etc.
-- Conflit, actualités.
+- Données Météos. Proposer API Météo. Avec limitation pour plan FREE
+- Données compagnies aériennes. Lufthansa, Easy Jet, etc. Avec limitation plan FREE.
+- Conflit, actualités. => IA ?
 
-Base :
+
+
+Data Base  :
 - Base PostgreSQL / PostGIS (géo localisation)
 - Faire UML architecture
 - ML => Régression linéaire, random forest, Réseau Neurone ?
 - IA avec n8n ?
 
-Harmoniser avec branche.
+- Stockage des données (format, stack)
+- Normalisation des données ?
+
+Visualisation :
+- Power BI, autre outils, etc. Looper Studio, MetaBase
+
+Architecture / Harmoniser avec branche.
 
 
 
