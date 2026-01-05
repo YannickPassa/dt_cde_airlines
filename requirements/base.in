@@ -3,6 +3,7 @@
 apache-airflow[amazon,sentry,slack]==3.1.2 # https://github.com/apache/airflow
 #needed to be able to create a role
 apache-airflow-providers-fab #https://pypi.org/project/apache-airflow-providers-fab/
+asyncpg  #https://pypi.org/project/asyncpg/
 
 # DBT
 # ------------------------------------------------------------------------------
@@ -12,6 +13,6 @@ dbt-postgres  # https://github.com/dbt-labs/dbt-postgres
 # Data management (scripts, DAG, ...)
 # ------------------------------------------------------------------------------
 # Pandas 2.2 break DataFrame.to_sql() for SQLAlchemy<=2.0, pinning until we move to it
-pandas==2.2.3  # https://github.com/pandas-dev/pandas
+pandas  # https://github.com/pandas-dev/pandas
 psycopg[binary] # https://www.psycopg.org/
 py7zr # https://github.com/miurahr/py7zr
