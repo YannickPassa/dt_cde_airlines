@@ -14,4 +14,8 @@ freezegun  # https://github.com/spulec/freezegun
 pytest  # https://github.com/pytest-dev/pytest
 pytest-mock  # https://github.com/pytest-dev/pytest-mock/
 pytest-randomly  # https://github.com/pytest-dev/pytest-randomly
-pytest-subtests  # https://github.com/pytest-dev/pytest-subtests
+pytest-subtests  # https://gitkagglehub.com/pytest-dev/pytest-subtests
+
+# Data sources 
+# ------------------------------------------------------------------------------
+kaggle==1.5.16 #https://www.kaggle.com/docs/api#interacting-with-datasets
