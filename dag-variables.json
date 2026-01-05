@@ -1,5 +1,5 @@
 {
-    "PGDATABASE": "airflow",
+    "PGDATABASE": "pilotage",
     "PGHOST": "postgres",
     "PGPASSWORD": "password",
     "PGPORT": 5432,
